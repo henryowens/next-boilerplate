@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import appConfig from "@/utils/appConfig";
 import "../styles/globals.css";
+import Link from "next/link";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <>
@@ -11,7 +12,16 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
       <meta name="description" content={appConfig.description} />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Component {...pageProps} />
+    <div>
+      <div className="flex justify-between">
+        <h3>Next.js Boilerplate</h3>
+        <div>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+      </div>
+      <Component {...pageProps} />
+    </div>
   </>
 );
 
