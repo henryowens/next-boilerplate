@@ -5,7 +5,7 @@ import appConfig from "@/utils/appConfig";
 const MyDocument: React.FC = () => (
   <Html lang={appConfig.title}>
     <Head />
-    <body>
+    <body className="p-4">
       <Main />
       <NextScript />
     </body>

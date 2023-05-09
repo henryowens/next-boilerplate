@@ -13,9 +13,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div>
-      <div className="flex justify-between">
-        <h3>Next.js Boilerplate</h3>
-        <div>
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-xl font-bold">Next.js Boilerplate</h3>
+        <div className="flex gap-2">
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </div>
