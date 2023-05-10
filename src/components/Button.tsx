@@ -1,11 +1,20 @@
 import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+import styles from "./styles/button.module.css";
 
-const classes =
-  "bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500";
-const Button: React.FC<ButtonProps> = ({ className, ...props }) => (
-  <button className={`${classes} ${className}`} {...props} />
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  appearance?: "default" | "outlined";
+}
+
+const Button: React.FC<ButtonProps> = ({
+  className,
+  appearance = "default",
+  ...props
+}) => (
+  <button
+    className={`${styles.btn} ${styles[`btn-${appearance}`]} ${className}`}
+    {...props}
+  />
 );
 
 export default Button;
